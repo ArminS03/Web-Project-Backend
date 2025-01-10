@@ -1,7 +1,8 @@
 package com.project.web.Repo;
 
-import com.project.web.Entities.Category;
 import org.springframework.data.repository.CrudRepository;
+
+import com.project.web.Entity.Category;
 
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 }

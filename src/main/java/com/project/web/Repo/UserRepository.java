@@ -1,7 +1,8 @@
 package com.project.web.Repo;
 
-import com.project.web.Entities.User;
 import org.springframework.data.repository.CrudRepository;
+
+import com.project.web.Entity.User;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 }
