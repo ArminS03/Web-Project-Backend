@@ -35,4 +35,10 @@ public class QuestionController {
         Optional<Question> question = questionService.getQuestionById(id);
         return question.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/created-by/{userId}")
+    public ResponseEntity<List<Question>> getQuestionsByUserId(@PathVariable Integer userId) {
+        List<Question> questions = questionService.getQuestionsByCreatedBy(userId);
+        return ResponseEntity.ok(questions);
+    }
 }

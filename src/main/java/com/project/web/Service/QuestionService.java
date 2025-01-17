@@ -27,5 +27,8 @@ public class QuestionService {
     public Optional<Question> getQuestionById(Integer id) {
         return questionRepository.findById(id);
     }
-}
 
+    public List<Question> getQuestionsByCreatedBy(Integer createdBy) {
+        return questionRepository.findByCreatedBy(createdBy);
+    }
+}
