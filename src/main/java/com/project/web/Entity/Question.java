@@ -7,12 +7,14 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Question {
     @Id
     private Integer id;
+    private String name;
+    private Integer difficulty;
     private String text;
     private String optionA;
     private String optionB;
     private String optionC;
     private String optionD;
-    private String correctOption;
+    private Integer correctOption;
     private Integer categoryId; // Refernces Category ID
     private Integer createdBy; // References User ID
 
@@ -64,11 +66,11 @@ public class Question {
         this.optionD = optionD;
     }
 
-    public String getCorrectOption() {
+    public Integer getCorrectOption() {
         return correctOption;
     }
 
-    public void setCorrectOption(String correctOption) {
+    public void setCorrectOption(Integer correctOption) {
         this.correctOption = correctOption;
     }
 
@@ -86,5 +88,21 @@ public class Question {
 
     public void setCreatedBy(Integer createdBy) {
         this.createdBy = createdBy;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Integer difficulty) {
+        this.difficulty = difficulty;
     }
 }

@@ -10,10 +10,19 @@ public class User {
     private String username;
     private String password;
     private UserType userType;
+    private Integer score = 0;
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 
     public enum UserType {
-        PLAYER,
-        DESIGNER
+        player,
+        designer
     }
 
     public Integer getId() {
