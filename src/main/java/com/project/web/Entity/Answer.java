@@ -3,24 +3,14 @@ package com.project.web.Entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.LocalDateTime;
-
 @Table("answers")
 public class Answer {
     @Id
     private Integer id;
     private Integer questionId; // References Question ID
     private Integer userId; // References User ID
-    private AnswerType selectedOption;
+    private Integer selectedOption;
     private Boolean isCorrect;
-    private LocalDateTime answeredAt;
-
-    public enum AnswerType {
-        A,
-        B,
-        C,
-        D
-    }
 
     public Integer getId() {
         return id;
@@ -46,11 +36,11 @@ public class Answer {
         this.userId = userId;
     }
 
-    public AnswerType getSelectedOption() {
+    public Integer getSelectedOption() {
         return selectedOption;
     }
 
-    public void setSelectedOption(AnswerType selectedOption) {
+    public void setSelectedOption(Integer selectedOption) {
         this.selectedOption = selectedOption;
     }
 
@@ -60,13 +50,5 @@ public class Answer {
 
     public void setIsCorrect(Boolean isCorrect) {
         this.isCorrect = isCorrect;
-    }
-
-    public LocalDateTime getAnsweredAt() {
-        return answeredAt;
-    }
-
-    public void setAnsweredAt(LocalDateTime answeredAt) {
-        this.answeredAt = answeredAt;
     }
 }
